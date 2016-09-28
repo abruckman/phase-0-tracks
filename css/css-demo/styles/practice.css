@@ -15,3 +15,7 @@
 .email:hover{
 	color: green;
 }
+
+ul.accomplishments li {
+	color: green;
+}
