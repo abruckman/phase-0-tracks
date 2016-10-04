@@ -1,0 +1,29 @@
+1. determine current floor, and call it "current", with an integer value 
+2. determine intended floor, and call it "destination", with an integer value. 
+	3. if "current">"destination", press the elevator call button with an up arrow. When the elevator doors open, enter only if the elevator is going up
+	4. if "current"<"destination", press the elevator call button with a down arrow. When the elevator doors open, enter only if the elevator is going down
+5. find the number that corresponds to "destination"
+6. is the number already activated?
+	yes: you wait until you are on that floor and exit
+	no: press the button associated with "destination". Exit the elevator when the door opens on that floor
+
+Making coffee:
+1. determine if there is coffee in the coffee pot. 
+	If there is, check if it's hot. 
+		If it's cold, throw it out. 
+		If it's hot, drink it.
+	If there is not, proceed
+2. determine if there is a used coffee filter in the spot for that. 
+	if there is, throw it out
+	if there is not, proceed
+3. Decide how many cups of coffee you want, this number is "cups"
+4. Fill coffee pot with water to the line corresponding to "cups" 
+5. pour this water into the reservoir
+6. check if the coffee is ground
+	If the coffee is not ground, put "cups" scoops into the grinder
+		activate the grinder to produce "grounds"
+		put "grounds" in a coffee filter
+	If the coffee is ground, put "cups" scoops into a coffee filter
+7. Put the coffee filter in its spot.
+8. press button and wait 5 minutes
+9. pour coffee and drink
