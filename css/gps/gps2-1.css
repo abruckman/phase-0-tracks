@@ -17,6 +17,22 @@ code {
   background: #9b9da0;
 }
 
-details p{
+details{
   background: #bbbec1;
+}
+details p{
+	margin:0;
+}
+header{
+	background-image: url("bluetile.jpg");
+	background-size:80px 20px;
+	color:orange;
+}
+footer{
+	border-top:2px solid black;
+	background: grey;
+	margin-top:20px;
+}
+code:hover{
+	background-color:white;
 }
