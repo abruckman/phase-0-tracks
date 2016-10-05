@@ -1,3 +1,22 @@
 body{
-	background-color: red;
+  max-width: 960px;
+}
+
+.column-1{
+  display:inline-block;
+  width: 48%;
+}
+
+.column-2{
+  display:inline-block;
+  width:48%;
+  vertical-align:top;
+}
+
+code {
+  background: #9b9da0;
+}
+
+details p{
+  background: #bbbec1;
 }
