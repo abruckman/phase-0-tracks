@@ -43,13 +43,13 @@ while currentemp<employees
 
 	close = false
 	puts "do you have any allergies? list one at a time, type 'done' when finished "
-	while close = false
+	while close == false
 		
 		allergy = gets.chomp
 		if allergy =="sunshine"
 			vamp = 4
 			close = true
-		elsif allergy == done
+		elsif allergy == "done"
 			close = true
 		else
 			puts "any others?"
