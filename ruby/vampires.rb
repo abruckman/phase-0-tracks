@@ -68,5 +68,7 @@ while currentemp<employees
 	else
 		puts "results inconclusive"
 	end
+
 	currentemp = currentemp + 1
 end
+puts "Actually, never mind! What do these questions have to do with anthing? let's all be friends."
