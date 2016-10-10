@@ -2,10 +2,10 @@
 #Convert yes/no to true/false
 def to_boolean(answer)
 	#if yes go to true
-	if answer=="yes"
+	if answer=="yes" || answer== "true"
 		return true
 	#if false go to no
-	elsif answer == "no"
+	elsif answer == "no" || answer == "false"
 		return false
 	end
 end
@@ -33,13 +33,13 @@ prefers[:name] =gets.chomp
 	#convert to integer
 puts "how many rooms?"
 prefers[:rooms] = gets.chomp
-prefers[:rooms] = prefers[:rooms].to_f
+prefers[:rooms] = prefers[:rooms].to_i
 
 #prompt for client's budget
 puts "what is the client's budget?"
 prefers[:budget] = gets.chomp
 	#convert to float
-prefers[:budget] = prefers[:budget].to_i
+prefers[:budget] = prefers[:budget].to_f
 
 
 #prompt for client's number of children
@@ -63,7 +63,7 @@ prefers[:carpet] = gets.chomp
 prefers[:carpet] = to_boolean(prefers[:carpet])
 
 #prompt if sustainability is priority
-puts "is sustainabilit a priority?"
+puts "is sustainability a priority?"
 prefers[:sustainability] = gets.chomp
 #convert to boolean
 prefers[:sustainability] = to_boolean(prefers[:sustainability])
@@ -75,33 +75,37 @@ prefers[:color] = gets.chomp
 p prefers
 
 #prompt for corrections
-
+puts "What needs to be corrected?"
+correct = gets.chomp
 #if they say none, move on
+if correct == "none"
+	exit
 
 # if they have a correction 
 	#prompt for new value
 	
 	#prompt for client's full name
+else
+	correct = correct.to_sym
+	puts "what is new value?"
+	prefers[correct] = gets.chomp
 
-	#prompt for client's number of rooms
+	#if number of rooms or children
+	if correct == :rooms || correct == :children	
 		#convert to integer
-
-	#prompt for client's budget
+	prefers[correct] = prefers[correct].to_i
+	#if budget
+	elsif correct == :budget	
 		#convert to float
+		prefers[correct] = prefers[correct].to_f
 
-	#prompt for client's number of children
-		#convert to integer
-
-	#prompt for client's favorite artist
-
-	#prompt for client's favorite city
-
-	#prompt if client wants carpet
+	#if its carpet or sustainability
 		#convert from yes/no to true/false
+	elsif correct == :carpet || correct == :sustainability
+		prefers[correct] = to_boolean(prefers[correct])
+	end
+end
 
-	#prompt if sustainability is priority
-	#convert to boolean
-
-	#prompt for client's favorite color
 
 #print the method
+p prefers
