@@ -57,3 +57,7 @@ lucky = [5, 14, 21, 36]
 p lucky
 lucky.keep_if { |num| num >= 15}
 p lucky
+
+p bushes
+bushes.keep_if { |letter, number| number  >= 15 }
+p bushes
