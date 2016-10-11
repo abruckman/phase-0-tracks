@@ -34,5 +34,5 @@ utensils = [
 	"spoon"
 	] 
 p utensils
-utensils.map! {|thing| p thing.upcase }
+utensils.map! {|thing|  thing.upcase }
 p utensils
