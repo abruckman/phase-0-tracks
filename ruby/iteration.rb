@@ -54,10 +54,18 @@ lucky = [5, 14, 21, 36]
 # bushes.delete_if { |letter, number| number <=15 }
 # p bushes
 
+# p lucky
+# lucky.keep_if { |num| num >= 15}
+# p lucky
+
+# p bushes
+# bushes.keep_if { |letter, number| number  >= 15 }
+# p bushes
+
 p lucky
-lucky.keep_if { |num| num >= 15}
+lucky.select! {|num| num >=15}
 p lucky
 
 p bushes
-bushes.keep_if { |letter, number| number  >= 15 }
+bushes.select! {|letter, num| num >=15}
 p bushes
