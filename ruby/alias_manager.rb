@@ -48,7 +48,7 @@ def encode(realident)
 	
 end
 
-#delcare an empty namelist hahs
+#delcare an empty namelist hash
 namelist = {}
 
 #driver code
