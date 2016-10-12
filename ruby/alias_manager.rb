@@ -1,12 +1,13 @@
+
 #declare a name endcoding method
 # test name "Zalet Libotum" has all the vowels and edge cases.
-def encode(ident)
-p ident
-	#downcase the string
-	ident = ident.downcase
-	#turn name into a string
+def encode(realident)
+
+	#downcase the string and declare a separate value to be operated on so we can print realident at the end
+	ident = realident.downcase
+	#turn name into a array
 	ident = ident.split(' ')
-	#swap the first and last name's location in the string
+	#swap the first and last name's location in the array
 	ident = ident.reverse
 	#return to a string
 	ident = ident.join(' ')
@@ -28,7 +29,7 @@ p ident
 			letter = vowels[vowels.index(letter) - 1]
 		elsif consonants.include?(letter)
 			letter = consonants[consonants.index(letter) -1]
-			
+	#if its not a vowel or letter don't change it		
 		else
 			letter = letter
 		end
@@ -39,21 +40,31 @@ p ident
 	ident = ident.split(' ')
 	#iterate through with the .capitalize method
 	ident.map! {|word| word.capitalize! }
-	#rejoin the array
+	#rejoin the array 
 	ident = ident.join(' ')
 	#Zalet Libotum => Mocuvan Bemiv
-	p ident
+	
+	
+	
 end
+
+#delcare an empty namelist hahs
+namelist = {}
 
 #driver code
 #prompt the user for their name
 puts "What is your name?"
 yourname = gets.chomp
-#set up a loop that will run until they say quit or just hit enter
+# #set up a loop that will run until they say quit or just hit enter
 until yourname == "quit" || yourname == ""
 #run encode in the loop on their name
-	encode(yourname)
+	newname = encode(yourname)
+	#add the info to the namelist
+	namelist[yourname] = newname
+	#prompt them for their next input
 	puts "Enter the next name to encode, or enter 'quit'"
 	yourname = gets.chomp
 end
-#prompt them for their next input
+
+#if they quit print the namelist. It should iterate throug the hash printing it in sentance form
+namelist.each {|real, fake| puts "#{fake} is actually #{real}"}
