@@ -34,8 +34,6 @@ class Cat
 	def initialize
 		puts "initialzing cat"
 	end
-
-
 #method say meow
 	def meow
 		puts "meow"
@@ -58,3 +56,20 @@ dog.shake
 kitty = Cat.new
 kitty.meow
 kitty.chase("mouse")
+
+#use loop to make 50 instances
+
+cats = []
+
+
+50.times do |i|
+	i = Cat.new
+	cats << i
+end
+
+p cats
+
+cats.each do |cat| 
+	cat.meow
+	cat.chase("bird")
+end
