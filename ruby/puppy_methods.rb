@@ -6,6 +6,9 @@
 # If you haven't already, update your driver code to demonstrate that all of these methods work as expected.
 
 class Puppy
+  def initialize
+  	"initialzes new puppy instance"
+  end
 
   def fetch(toy)
     puts "I brought back the #{toy}!"
