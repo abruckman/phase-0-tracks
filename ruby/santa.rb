@@ -23,6 +23,10 @@ class Santa
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 
+	attr_reader :ethnicity 
+	attr_accessor :gender, :age
+
+
 #create Speak method
 	def speak
 		puts "Ho, ho ho! Haaaappy holidays!"
@@ -42,32 +46,34 @@ class Santa
 			#use set last method
 		@reindeer_ranking = movelast(@reindeer_ranking, reindeer)
 	end	
-	# The @gender attribute should have a setter method that allows @gender to be reassigned from outside the class definition.
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+	# # The @gender attribute should have a setter method that allows @gender to be reassigned from outside the class definition.
+	# def gender=(new_gender)
+	# 	@gender = new_gender
+	# end
 
-	def gender
-		@gender
-	end
-	# The method age should simply return @age.
-	def age
-		@age 
-	end
-	# The method ethnicity should return @ethnicity.
-	def ethnicity
-		@ethnicity
-	end
+	# def gender
+	# 	@gender
+	# end
+	# # The method age should simply return @age.
+	# def age
+	# 	@age 
+	# end
+	# # The method ethnicity should return @ethnicity.
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
 end
 
-dave = Santa.new("male","white")
-p dave.ethnicity
-p dave.gender
-dave.gender = "female"
-p dave.gender
-p dave.get_mad_at("Dancer")
-p dave.age
+# test code for release 2 and 3
+# dave = Santa.new("male","white")
+# p dave.ethnicity
+# p dave.gender
+# dave.gender = "female"
+# p dave.gender
+# p dave.get_mad_at("Dancer")
+# p dave.age
+# p dave.celebrate_birthday
 
 #test
 
@@ -86,10 +92,11 @@ p dave.age
 
 # p santas
 
-# santas = []
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
-# end
-# p santas
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+25.times do |i|
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+  santas[i].age = rand(140) 
+  p santas[i]
+end
