@@ -9,20 +9,20 @@
 require_relative 'state_data'
 
 class VirusPredictor
-
+  #creates the class with attributes in pace
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  # combines the predicted death and speed of spread outputs
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+  # Predicts the number of deaths
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +40,7 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+  #calculates speed of spread from population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -64,10 +64,16 @@ class VirusPredictor
 
 end
 
+
+
 #=======================================================================
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+STATE_DATA.each do |state_name, stats|
+  state = VirusPredictor.new(state_name, stats[:population_density], stats[:population])
+  state.virus_effects
+end
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
@@ -85,5 +91,5 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status H
+# Contact GitHub API Training Shop Blog About
+# © 2016 GitHub, Inc. Terms Privacy Security Status H
