@@ -45,18 +45,17 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
 
     if @population_density >= 200
-      speed += 0.5
+      speed = 0.5
     elsif @population_density >= 150
-      speed += 1
+      speed = 1
     elsif @population_density >= 100
-      speed += 1.5
+      speed = 1.5
     elsif @population_density >= 50
-      speed += 2
+      speed = 2
     else
-      speed += 2.5
+      speed = 2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -92,5 +91,9 @@ end
 
 #=======================================================================
 # Reflection Section
-# Contact GitHub API Training Shop Blog About
-# © 2016 GitHub, Inc. Terms Privacy Security Status H
+
+#1. so there are two hash syntaxes, the Key =>value and the key: value syntax. the first kind works a bit better with a string key
+#2 require relative links this program to another file with that name (w/out a suffix) in this directory. 'require' can pull from anywhere, not just the directory, but needs a full filepath to work
+#3. the most straightforward way to iterate through a hash is .each. this returns each line individuall. .map goes through and returns the entire hash with those modifications made. .map! modifies the hash in playce
+#4. they were instance variables so they didn't need to be called.
+#5. difference between local, global and instance variables
