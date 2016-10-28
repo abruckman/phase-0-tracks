@@ -9,3 +9,11 @@ horses.push("bill");
 
 console.log(colors);
 console.log(horses);
+
+var horseColors = {};
+
+for (var i = colors.length - 1; i >= 0; i--) {
+	horseColors[horses[i]] = colors[i]
+}
+
+console.log(horseColors)
