@@ -53,11 +53,18 @@ var randString = function(){
 // Write a function that takes an integer for length, and builds and returns an array of strings of the given length
 
 // declare a randWords function that takes an integer (numWords) as a parameter
+var randWords = function(numWords){
 // declare an empty array
+	var list = []
 // iterate numWords times
+	for (var i = 0; i < numWords; i++) {
 // 	generate a random word between 1-10 chars
+	list.push(randString())
 // 	push that word into an array
+	}
 // return the array
+	return list
+}
 
 // -------------------------------------------------------------------
 // driver code
@@ -67,17 +74,19 @@ var randString = function(){
 // var test2 = ["1234", "2345", "123", "12345", "4567"]
 // console.log(longPhrase(test2))
 
-var steven = {name: "Steven", age: 54};
-var tamir = {name: "Tamir", age: 54}
-console.log ("expect: true")
-console.log(matchTest(steven, tamir))
+// var steven = {name: "Steven", age: 54};
+// var tamir = {name: "Tamir", age: 54}
+// console.log ("expect: true")
+// console.log(matchTest(steven, tamir))
 
-var steven = {name: "Steven", age: 54, location: "tree"};
-var tamir = {name: "Tamir", age: 54, location: "house" };
-console.log ("expect: true")
-console.log(matchTest(steven, tamir))
+// var steven = {name: "Steven", age: 54, location: "tree"};
+// var tamir = {name: "Tamir", age: 54, location: "house" };
+// console.log ("expect: true")
+// console.log(matchTest(steven, tamir))
 
-var steven = {name: "Steven", age: 54, location: "tree"};
-var tamir = {name: "Tamir", age: 52, location: "house" };
-console.log ("expect: false")
-console.log(matchTest(steven, tamir))
+// var steven = {name: "Steven", age: 54, location: "tree"};
+// var tamir = {name: "Tamir", age: 52, location: "house" };
+// console.log ("expect: false")
+// console.log(matchTest(steven, tamir))
+
+console.log(randWords(6))
