@@ -89,4 +89,9 @@ var randWords = function(numWords){
 // console.log ("expect: false")
 // console.log(matchTest(steven, tamir))
 
-console.log(randWords(6))
+for (var i = 0; i < 10; i++) {
+
+	var test1 = randWords(5);
+	console.log(test1);
+	console.log(longPhrase(test1));
+}
