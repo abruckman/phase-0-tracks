@@ -33,6 +33,31 @@ var matchTest = function(obj1, obj2){
 // return matchTrue
 }
 
+// write a function that generates a random string between 1-10 chars
+var randString = function(){
+// generate a random number between one and 10 for string length
+	var num = Math.ceil(Math.random() * 10);
+// declare a variable for an empty string
+	var result = '';
+// declare a string with the possible letters to put in
+	var possible = 'abcdefghijklmnopqrstuvwxyz';
+// iterate string length times
+	for (var i = 0; i < num; i++) {
+		result += possible.charAt(Math.floor(Math.random() * possible.length));
+	}
+//   add a random character from the possible to the string
+	return result;
+// return the string
+}
+
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length
+
+// declare a randWords function that takes an integer (numWords) as a parameter
+// declare an empty array
+// iterate numWords times
+// 	generate a random word between 1-10 chars
+// 	push that word into an array
+// return the array
 
 // -------------------------------------------------------------------
 // driver code
