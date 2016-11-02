@@ -1,0 +1,43 @@
+sqlite> SELECT * FROM projects, regions WHERE projects.region_number = regions.id;
+1|City of Redding|Wallace Basin|1|300000|1|North Coast|Dave Daveson|555-515-1515
+2|Contra Costa County|Truck Ave. Green Streets|2|150000|2|SF Bay Area|Lauren Lornsdottir|555-525-2525
+3|City of Monterey|Travis Creek Restoraton|3|2000000|3|Central Coast|Billy Williams|555-545-4545
+4|City of Daly City|Vista Grande|2|10000000|2|SF Bay Area|Lauren Lornsdottir|555-525-2525
+
+ UPDATE projects
+   ...> SET cost = 200000
+   ...> where applicant = "City of Redding";
+
+sqlite> SELECT * FROM projects, regions WHERE projects.region_number = regions.id;
+1|City of Redding|Wallace Basin|1|200000|1|North Coast|Dave Daveson|555-515-1515
+2|Contra Costa County|Truck Ave. Green Streets|2|150000|2|SF Bay Area|Lauren Lornsdottir|555-525-2525
+3|City of Monterey|Travis Creek Restoraton|3|2000000|3|Central Coast|Billy Williams|555-545-4545
+4|City of Daly City|Vista Grande|2|10000000|2|SF Bay Area|Lauren Lornsdottir|555-525-2525
+
+sqlite> SELECT projects.project_name, regions.contact, regions.phone FROM  projects, regions WHERE projects.region_number = regions.id;
+Wallace Basin|Dave Daveson|555-515-1515
+Truck Ave. Green Streets|Lauren Lornsdottir|555-525-2525
+Travis Creek Restoraton|Billy Williams|555-545-4545
+Vista Grande|Lauren Lornsdottir|555-525-2525
+
+sqlite> DELETE FROM projects WHERE cost > 5000000;
+sqlite> SELECT * FROM projects, regions WHERE projects.region_number = regions.id;
+1|City of Redding|Wallace Basin|1|200000|1|North Coast|Dave Daveson|555-515-1515
+2|Contra Costa County|Truck Ave. Green Streets|2|150000|2|SF Bay Area|Lauren Lornsdottir|555-525-2525
+3|City of Monterey|Travis Creek Restoraton|3|2000000|3|Central Coast|Billy Williams|555-545-4545
+sqlite>
+
+sqlite> SELECT * FROM projects JOIN regions ON projects.region_number = regions.id;
+1|City of Redding|Wallace Basin|1|200000|1|North Coast|Dave Daveson|555-515-1515
+2|Contra Costa County|Truck Ave. Green Streets|2|150000|2|SF Bay Area|Lauren Lornsdottir|555-525-2525
+3|City of Monterey|Travis Creek Restoraton|3|2000000|3|Central Coast|Billy Williams|555-545-4545
+
+sqlite> INSERT INTO projects (applicant, project_name, cost, region_number) VALUES ("LA County", "Tujunga", 200000, 4);
+
+sqlite> SELECT projects.project_name,regions.region_name FROM projects LEFT JOIN regions WHERE projects.region_number = regions.id;
+Wallace Basin|North Coast
+Truck Ave. Green Streets|SF Bay Area
+Travis Creek Restoraton|Central Coast
+
+sqlite> SELECT projects.project_name,regions.region_name FROM projects RIGHT JOIN regions WHERE projects.region_number = regions.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
