@@ -27,43 +27,43 @@ list.execute(create_table)
 #prompt user for view, add or remove
 puts "would you like to view, add or remove items?"
 goal = gets.chomp
-case goal
+if goal == "view"
 # => View
 # print the shopping list
-	when "view"
-		p list.execute("SELECT * FROM shopping")
+
+	p list.execute("SELECT * FROM shopping")
 # => add
-	when "add"
+elsif goal == "add"
 # request the name of the item		
-		puts "what would you like to add?"
-		item = gets.chomp
+	puts "what would you like to add?"
+	item = gets.chomp
 
 #create a loop to add multiple items
-		until item = "done"		
+	until item == "done"		
 #request what store it comes from
-			puts "what store is it from?"
-			store = gets.chomp
+		puts "what store is it from?"
+		store = gets.chomp
 #request the price
-			puts "how much will it cost?"
-			price = gets.chomp
+		puts "how much will it cost?"
+		price = gets.chomp
 #put it in the database
-			insert(shopping_list, item, store, price)
+		insert(list, item, store, price)
 #ask for next item or end the loop
-			puts "Type the name of the next item, or enter 'done' if done"
-			item = gets.chomp
-		end
+		puts "Type the name of the next item, or enter 'done' if done"
+		item = gets.chomp
 	end
+	
 
 # => remove
 #ask the name of the item
-	when "remove"
-		puts "Which Item should I remove?"
-		item = gets.chomp
-		delete(shopping_list, item)
-	
-	else 
-		"thats not one of the options"
-	end
+elsif goal == "remove"
+	puts "Which Item should I remove?"
+	item = gets.chomp
+	delete(shopping_list, item)
+
+else 
+	"thats not one of the options"
 end
+
 
 
