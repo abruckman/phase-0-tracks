@@ -63,6 +63,7 @@ case goal
 	
 	else 
 		"thats not one of the options"
+	end
 end
 
 
