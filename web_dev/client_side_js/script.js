@@ -20,3 +20,13 @@ header.addEventListener("click", showParagraph)
 
 para.addEventListener("click", addRedBorder)
 
+var newDiv = document.createElement("div"); 
+var newContent = document.createTextNode("Hi there and greetings!"); 
+newDiv.appendChild(newContent); 
+
+// add the newly created element and its content into the DOM 
+ var currentDiv = document.getElementById("picture"); 
+ document.body.insert(newDiv, currentDiv);
+
+ //add the text node to the newly created div.
+
