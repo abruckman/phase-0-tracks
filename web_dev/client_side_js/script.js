@@ -26,7 +26,7 @@ newDiv.appendChild(newContent);
 
 // add the newly created element and its content into the DOM 
  var currentDiv = document.getElementById("picture"); 
- document.body.insert(newDiv, currentDiv);
+ document.body.insertBefore(newDiv, currentDiv);
 
  //add the text node to the newly created div.
 
