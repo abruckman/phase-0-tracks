@@ -5,5 +5,13 @@
 </head>
 <body>
 <h1>SEARCH STUDENTS</h1>
+
+<p>
+	<% @students.each do |student| %>
+		<% if student["campus"] == params[:school] %>
+			<%= student %>	
+		<% end %>
+	<% end %>
+</p>
 </body>
 </html>

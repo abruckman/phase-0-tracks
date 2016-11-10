@@ -26,6 +26,7 @@ post '/students' do
 end
 
 get '/students/search' do
+	@students = db.execute("SELECT * FROM students")
 	erb :search_students
 end
 
