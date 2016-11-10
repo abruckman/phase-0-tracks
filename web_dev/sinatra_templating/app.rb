@@ -25,9 +25,13 @@ post '/students' do
   redirect '/'
 end
 
-get '/students/search' do
+post '/students/search' do
 	@students = db.execute("SELECT * FROM students")
 	erb :search_students
+end
+
+get '/search' do
+	erb :search_form
 end
 
 # add static resources

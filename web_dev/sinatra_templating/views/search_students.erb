@@ -6,9 +6,11 @@
 <body>
 <h1>SEARCH STUDENTS</h1>
 
+
+
 <p>
 	<% @students.each do |student| %>
-		<% if student["campus"] == params[:school] %>
+		<% if student["campus"] == params[:campus] %>
 			<%= student %>	
 		<% end %>
 	<% end %>
