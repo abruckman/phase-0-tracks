@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require "sinatra/reloader" if development?
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 
@@ -22,6 +23,10 @@ end
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
+end
+
+get '/students/search' do
+	erb :search_students
 end
 
 # add static resources
